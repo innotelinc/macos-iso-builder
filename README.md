@@ -1,10 +1,26 @@
 # Overview
 
+[![CI](https://github.com/innotelinc/macos-iso-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/innotelinc/macos-iso-builder/actions/workflows/ci.yml)
+[![License: GPL-3.0](https://img.shields.io/badge/license-GPL--3.0-blue.svg)](LICENSE)
+
+
 Build bootable macOS installer ISOs and DMGs directly from Apple's servers — no Mac required.
 
 This project has two parts:
 1. A script (`mkmaciso`) that uses only macOS built-in tools and commands to download and install the full macOS installer from Apple's servers into **/Applications**, and then creates bootable ISO/DMG images.
 2. GitHub Action workflows that run `mkmaciso` on Azure datacenter-hosted Mac minis if you don't have macOS.
+
+## Why macOS ISO Builder
+
+| Problem | Answer |
+| --- | --- |
+| Building a macOS installer needs a Mac. | The workflows run on hosted Mac minis when the operator has none. |
+| The image must boot, not only exist. | The script builds the installer media with the platform's own tools. |
+| The steps are easy to get wrong by hand. | One documented command and one workflow do the same thing. |
+
+Its place in the stack is [docs/stack.md](docs/stack.md); the canonical
+definition of the shared layers is the
+[Innotel Platform Stack](https://github.com/innotelinc/innotel-platform-stack).
 
 ## Before you start
 
@@ -106,3 +122,8 @@ Apple for macOS and their update servers, [Mavericks Forever](https://mavericksf
 This tool downloads macOS images directly from Apple's official servers. Users are responsible for complying with [Apple's Software License Agreement](https://www.apple.com/legal/sla/). macOS is a trademark of Apple Inc.
 
 Licensed under GPLv3.
+
+## License
+
+GPL-3.0 — see [LICENSE](LICENSE). Copyright © 2026 Innotel Inc. and the
+upstream authors. Upstream material remains under its own licence.
